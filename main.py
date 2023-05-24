@@ -12,43 +12,76 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #Eazy Level - Order not randomised:
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91
 
-password1 = ""
-selected_letters = random.sample(letters, nr_letters)
-selected_symbols = random.sample(symbols, nr_symbols)
-selected_numbers = random.sample(numbers, nr_numbers)
+# password1 = ""
+# selected_letters = random.sample(letters, nr_letters)
+# selected_symbols = random.sample(symbols, nr_symbols)
+# selected_numbers = random.sample(numbers, nr_numbers)
 
-for letter in selected_letters:
-  password1 += letter
-for symbol in selected_symbols:
-  password1 += symbol
-for number in selected_numbers:
-  password1 += number
+# for letter in selected_letters:
+#   password1 += letter
+# for symbol in selected_symbols:
+#   password1 += symbol
+# for number in selected_numbers:
+#   password1 += number
 
-print(f"Your easy password generated is {password1}\n")
+# print(f"Your easy password generated is {password1}\n")
+
+password = ""
+
+for char in range(1, nr_letters + 1):
+  password += random.choice(letters)
+
+for char in range(1, nr_symbols + 1):
+  password += random.choice(symbols)
+
+for char in range(1, nr_numbers + 1):
+  password += random.choice(numbers)
+
+print(f"Your easy password generated is {password}\n")
 
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
-selected_characters = []
+password_list = []
 
-selected_letters = random.sample(letters, nr_letters)
-selected_symbols = random.sample(symbols, nr_symbols)
-selected_numbers = random.sample(numbers, nr_numbers)
+for char in range(1, nr_letters + 1):
+  password_list += random.choice(letters)
 
-for letter in selected_letters:
-  selected_characters.append(letter)
-for symbol in selected_symbols:
-  selected_characters.append(symbol)
-for number in selected_numbers:
-  selected_characters.append(number)
+for char in range(1, nr_symbols + 1):
+  password_list += random.choice(symbols)
 
-password2 = ""
-n = len(selected_characters)
+for char in range(1, nr_numbers + 1):
+  password_list += random.choice(numbers)
 
-randomized_selected_characters = random.sample(selected_characters, n)
+random.shuffle(password_list)
 
-for character in randomized_selected_characters:
-  password2 += character
-  
-print(f"Your hard password generated is {password2}\n")
+password = ""
+
+for char in password_list:
+  password += char
+
+print(f"Your hard password generated is {password}\n")
+
+# selected_characters = []
+
+# selected_letters = random.sample(letters, nr_letters)
+# selected_symbols = random.sample(symbols, nr_symbols)
+# selected_numbers = random.sample(numbers, nr_numbers)
+
+# for letter in selected_letters:
+#   selected_characters.append(letter)
+# for symbol in selected_symbols:
+#   selected_characters.append(symbol)
+# for number in selected_numbers:
+#   selected_characters.append(number)
+
+# password2 = ""
+# n = len(selected_characters)
+
+# randomized_selected_characters = random.sample(selected_characters, n)
+
+# for character in randomized_selected_characters:
+#   password2 += character
+
+# print(f"Your hard password generated is {password2}\n")
