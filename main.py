@@ -23,6 +23,7 @@ for symbol in selected_symbols:
   password1 += symbol
 for number in selected_numbers:
   password1 += number
+
 print(f"Your easy password generated is {password1}\n")
 
 
@@ -49,4 +50,5 @@ randomized_selected_characters = random.sample(selected_characters, n)
 
 for character in randomized_selected_characters:
   password2 += character
+  
 print(f"Your hard password generated is {password2}\n")
